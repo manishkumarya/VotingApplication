@@ -27,4 +27,4 @@
     For any questions or feedback, please contact:
 
     Email: kohlimanish48@gmail.com
-    GitHub Issues: Create an Issue
+
