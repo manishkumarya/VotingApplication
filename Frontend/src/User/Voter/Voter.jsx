@@ -44,7 +44,7 @@ function Voter(){
                 <div className="navbar bg-sky-30 flex justify-around ">
                     <a className="btn btn-ghost text-4xl">Voters </a>
                     <div className="">
-                        <button className="btn btn-ghost text-white bg-pink-500 hover:bg-pink-700 mr-5">Add new</button>
+                        <Link  to="/Signup" className="btn btn-ghost text-white bg-pink-500 hover:bg-pink-700 mr-5">Add new</Link>
                         <button className="btn btn-ghost text-white bg-pink-500 hover:bg-pink-700 ">Remove</button>
                         <button className="btn btn-ghost text-white bg-pink-500 hover:bg-pink-700 ml-5">update</button>
                     </div>

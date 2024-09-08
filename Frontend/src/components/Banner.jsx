@@ -1,4 +1,5 @@
 import React from "react";
+import Login from "./Login";
 function Banner() {
     return (<>
         <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 flex my-20">
@@ -17,7 +18,10 @@ function Banner() {
               </svg>
               <input type="text" className="grow" placeholder="Email" />
             </label>
-            <button className="btn mt-2 btn-secondary">Get Started</button>
+            <button className="btn mt-2 btn-secondary" onClick={()=>{
+              document.getElementById("my_modal_3").showModal()
+            }}>Get Started</button>
+            <Login/>
         
 
             </div>

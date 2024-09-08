@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { get } from "react-hook-form";
 import Card from "../../components/Card";
 import { Link } from "react-router-dom";
 import AddCandi from "./AddCandi";
@@ -13,7 +12,7 @@ function Candidate() {
         const getCandidate = async () => {
             try {
                 const res = await axios.get("http://localhost:3000/Candidate");
-                console.log(res.data);
+                console.log(res.data._id);
                 setCandidate(res.data);
             }
             catch (error) {
