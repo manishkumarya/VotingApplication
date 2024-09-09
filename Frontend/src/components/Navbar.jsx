@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import Login from './Login';
 import { useAuth } from '../Context/AuthProvider';
-import Logout from './Logout';
+import Profile from './Profile';
 
 function Navbar() {
  const[sticky,setSticky]=useState(false);
@@ -91,7 +91,7 @@ return ()=>{
   </svg>
 </label>
  </div>
- {authUser ?(<Logout/>):(  <div>
+ {authUser ?(<Profile/>):(  <div>
     <a className="btn w-20" onClick={()=>{
       document.getElementById("my_modal_3").showModal()
     }}>Login</a>

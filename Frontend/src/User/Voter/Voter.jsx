@@ -1,12 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import List from "../../components/List";
 import { Link } from "react-router-dom";
 function Voter(){
     const [Voter,setVoter]=useState([]);
     const [sticky,setSticky]=useState(false);
-
-
 
    useEffect(()=>{
     const getVoter= async ()=>{
@@ -57,10 +54,30 @@ function Voter(){
                 <Link to="/" className=" mt-10 bg-pink-500 text-white px-3 py-2 rounded-md hover:bg-pink-700 duration-300">Back</Link>
             </div>
             <div className="mt-12 grid grid-cols-1">
-                {
+                {/* {
+                    
                     filterData.map((item)=>(
                        <List key={item.id} item={item}/>
                     ))
+                } */}
+                {
+                    filterData.length > 0 ? (
+                      <ol className="list-decimal pl-4">
+                        {
+                            filterData.map((item)=>{
+                                return(
+                                     
+                                    <li key={item.id} className="p-4 border rounded-md shadow-md bg-white">
+                                       <p><strong>Name:</strong> {item.name}</p>
+                                       <p><strong>Age:</strong>{item.age}</p>
+                                       <p><strong>Address:</strong> {item.Adress}</p>
+                                    </li>
+                                     
+                                )
+                            })
+                        }
+                      </ol>
+                    ):(<p>no voters available</p>)
                 }
 
                 

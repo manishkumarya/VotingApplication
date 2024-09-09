@@ -1,11 +1,10 @@
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form"
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 function Login(){
-  
     const {
         register,
         handleSubmit,
@@ -46,6 +45,7 @@ function Login(){
         };
  return(
     <>
+     
 <dialog id="my_modal_3" className="modal">
   <div className="modal-box">
     <form onSubmit={handleSubmit(onSubmit)} method="dialog">

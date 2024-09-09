@@ -3,7 +3,7 @@ import axios from "axios";
 import Card from "../../components/Card";
 import { Link } from "react-router-dom";
 import AddCandi from "./AddCandi";
-
+import UpdateCandi from "./UpdateCandi";
 function Candidate() {
     const [Candidate, setCandidate] = useState([]);
     const [sticky, setSticky] = useState(false);
@@ -12,7 +12,7 @@ function Candidate() {
         const getCandidate = async () => {
             try {
                 const res = await axios.get("http://localhost:3000/Candidate");
-                console.log(res.data._id);
+                // console.log(res.data._id);
                 setCandidate(res.data);
             }
             catch (error) {
@@ -42,14 +42,12 @@ function Candidate() {
         <>
             <div className={`max-w-screen-2xl container mx-auto md:px-20 px-4 fixed top-0 left-0 right-0 z-50 ${sticky ? "sticky-navbar shadow-md bg-sky-50 duration-300 transition-all ease-in-out" : ""}`}>
                 <div className="navbar bg-sky-30 flex justify-around ">
-                    <a className="btn btn-ghost text-4xl">Candidates</a>
+                    <Link  to="/VotingCount" className="btn btn-ghost text-2xl text-black-500 bg-green-500 hover:bg-green-700 m-0">Result</Link>
                     <div className="">
                         <button className="btn btn-ghost text-white bg-pink-500 hover:bg-pink-700 mr-10 " onClick={() => {
-                            document.getElementById("my_modal_3").showModal()
+                            document.getElementById("my_modal_4").showModal()
                         }}>Add new</button>
                         <AddCandi/>
-                        <button className="btn btn-ghost text-white bg-pink-500 hover:bg-pink-700 m-0">Remove</button>
-                        <button className="btn btn-ghost text-white bg-pink-500 hover:bg-pink-700 ml-5">update</button>
                     </div>
                 </div>
             </div>
@@ -62,7 +60,11 @@ function Candidate() {
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-2">
                     {
                         Candidate.map((item) => (
+                            
+                            <>
                             <Card key={item.id} item={item} />
+                            <UpdateCandi key={item.id} item={item}/>
+                            </>
                         ))
                     }
                 </div>

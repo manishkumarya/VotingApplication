@@ -8,6 +8,10 @@ import Voter from './User/Voter/Voter'
 import { Toaster } from 'react-hot-toast';
 import { useAuth } from './Context/AuthProvider'
 import AddCandi from './User/Candidate/AddCandi'
+import VotingCount from './User/Candidate/VotingCount'
+import UpdateCandi from './User/Candidate/UpdateCandi'
+import UpdatePassword from './User/UpdatePassword'
+
 
 function App() {
   const [authUser,setAuthuser]=useAuth();
@@ -24,11 +28,14 @@ function App() {
         {/* user route  */}
         <Route path='/Candidate' element={authUser?<Candidate/> : <Navigate to="/signup"/>}></Route>
         <Route path='/Candidate/Add' element={authUser?<AddCandi/> : <Navigate to="/Candidate"/>}></Route>
-
+        <Route path='/Candidate/Update' element={authUser?<UpdateCandi/> : <Navigate to="/Candidate"/>}></Route>
+        <Route path='/votingCount' element={ <VotingCount/>}></Route>
         <Route path='/Voter' element={authUser?<Voter/> : <Navigate to="/signup"/>}></Route>
-
+        <Route path='/UpdatePassword' element={ <UpdatePassword/>}></Route>
         {/* signup route  */}
         <Route path='/Signup' element={ <Signup/>}></Route>
+        
+
        
       </Routes>
       <Toaster />

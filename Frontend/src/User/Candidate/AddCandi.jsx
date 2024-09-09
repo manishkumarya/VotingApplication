@@ -9,7 +9,7 @@ function AddCandi() {
         handleSubmit,
         formState: { errors },
         reset,
-      } = useForm()
+      } = useForm();
     
       const onSubmit = async (data) =>{
         const Userinfo={
@@ -54,7 +54,7 @@ function AddCandi() {
       }
     return(
   <>
-      <dialog id="my_modal_3" className="modal">
+      <dialog id="my_modal_4" className="modal">
   <div className="modal-box">
     <form onSubmit={handleSubmit(onSubmit)} method="dialog">
       {/* if there is a button in form, it will close the modal */}
