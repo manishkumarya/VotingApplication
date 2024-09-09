@@ -1,4 +1,4 @@
--- Ongoing Project----
+-- Ongoing Project---- working on making it more responsive
 
 
    ************* Voting_Applications *********
